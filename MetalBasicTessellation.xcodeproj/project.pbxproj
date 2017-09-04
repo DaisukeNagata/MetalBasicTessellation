@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB3D87631F5D974A0010FFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */; };
+		BB3D87651F5D974A0010FFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87641F5D974A0010FFD7 /* ViewController.swift */; };
+		BB3D87681F5D974A0010FFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D87661F5D974A0010FFD7 /* Main.storyboard */; };
+		BB3D876A1F5D974A0010FFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3D87691F5D974A0010FFD7 /* Assets.xcassets */; };
+		BB3D876D1F5D974A0010FFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */; };
+		BB3D87781F5D974A0010FFD7 /* MetalBasicTessellationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87771F5D974A0010FFD7 /* MetalBasicTessellationTests.swift */; };
+		BB3D87831F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB3D87741F5D974A0010FFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB3D87571F5D974A0010FFD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB3D875E1F5D974A0010FFD7;
+			remoteInfo = MetalBasicTessellation;
+		};
+		BB3D877F1F5D974A0010FFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB3D87571F5D974A0010FFD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB3D875E1F5D974A0010FFD7;
+			remoteInfo = MetalBasicTessellation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB3D875F1F5D974A0010FFD7 /* MetalBasicTessellation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBasicTessellation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB3D87641F5D974A0010FFD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB3D87671F5D974A0010FFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB3D87691F5D974A0010FFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB3D876C1F5D974A0010FFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB3D876E1F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB3D87731F5D974A0010FFD7 /* MetalBasicTessellationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBasicTessellationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3D87771F5D974A0010FFD7 /* MetalBasicTessellationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBasicTessellationTests.swift; sourceTree = "<group>"; };
+		BB3D87791F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB3D877E1F5D974A0010FFD7 /* MetalBasicTessellationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBasicTessellationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBasicTessellationUITests.swift; sourceTree = "<group>"; };
+		BB3D87841F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB3D875C1F5D974A0010FFD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D87701F5D974A0010FFD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D877B1F5D974A0010FFD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB3D87561F5D974A0010FFD7 = {
+			isa = PBXGroup;
+			children = (
+				BB3D87611F5D974A0010FFD7 /* MetalBasicTessellation */,
+				BB3D87761F5D974A0010FFD7 /* MetalBasicTessellationTests */,
+				BB3D87811F5D974A0010FFD7 /* MetalBasicTessellationUITests */,
+				BB3D87601F5D974A0010FFD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB3D87601F5D974A0010FFD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB3D875F1F5D974A0010FFD7 /* MetalBasicTessellation.app */,
+				BB3D87731F5D974A0010FFD7 /* MetalBasicTessellationTests.xctest */,
+				BB3D877E1F5D974A0010FFD7 /* MetalBasicTessellationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB3D87611F5D974A0010FFD7 /* MetalBasicTessellation */ = {
+			isa = PBXGroup;
+			children = (
+				BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */,
+				BB3D87641F5D974A0010FFD7 /* ViewController.swift */,
+				BB3D87661F5D974A0010FFD7 /* Main.storyboard */,
+				BB3D87691F5D974A0010FFD7 /* Assets.xcassets */,
+				BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */,
+				BB3D876E1F5D974A0010FFD7 /* Info.plist */,
+			);
+			path = MetalBasicTessellation;
+			sourceTree = "<group>";
+		};
+		BB3D87761F5D974A0010FFD7 /* MetalBasicTessellationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB3D87771F5D974A0010FFD7 /* MetalBasicTessellationTests.swift */,
+				BB3D87791F5D974A0010FFD7 /* Info.plist */,
+			);
+			path = MetalBasicTessellationTests;
+			sourceTree = "<group>";
+		};
+		BB3D87811F5D974A0010FFD7 /* MetalBasicTessellationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */,
+				BB3D87841F5D974A0010FFD7 /* Info.plist */,
+			);
+			path = MetalBasicTessellationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB3D875E1F5D974A0010FFD7 /* MetalBasicTessellation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB3D87871F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellation" */;
+			buildPhases = (
+				BB3D875B1F5D974A0010FFD7 /* Sources */,
+				BB3D875C1F5D974A0010FFD7 /* Frameworks */,
+				BB3D875D1F5D974A0010FFD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalBasicTessellation;
+			productName = MetalBasicTessellation;
+			productReference = BB3D875F1F5D974A0010FFD7 /* MetalBasicTessellation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB3D87721F5D974A0010FFD7 /* MetalBasicTessellationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB3D878A1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationTests" */;
+			buildPhases = (
+				BB3D876F1F5D974A0010FFD7 /* Sources */,
+				BB3D87701F5D974A0010FFD7 /* Frameworks */,
+				BB3D87711F5D974A0010FFD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB3D87751F5D974A0010FFD7 /* PBXTargetDependency */,
+			);
+			name = MetalBasicTessellationTests;
+			productName = MetalBasicTessellationTests;
+			productReference = BB3D87731F5D974A0010FFD7 /* MetalBasicTessellationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB3D877D1F5D974A0010FFD7 /* MetalBasicTessellationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB3D878D1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationUITests" */;
+			buildPhases = (
+				BB3D877A1F5D974A0010FFD7 /* Sources */,
+				BB3D877B1F5D974A0010FFD7 /* Frameworks */,
+				BB3D877C1F5D974A0010FFD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB3D87801F5D974A0010FFD7 /* PBXTargetDependency */,
+			);
+			name = MetalBasicTessellationUITests;
+			productName = MetalBasicTessellationUITests;
+			productReference = BB3D877E1F5D974A0010FFD7 /* MetalBasicTessellationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB3D87571F5D974A0010FFD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = nagatadaisuke;
+				TargetAttributes = {
+					BB3D875E1F5D974A0010FFD7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B3ZKJZUE9E;
+						ProvisioningStyle = Automatic;
+					};
+					BB3D87721F5D974A0010FFD7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B3ZKJZUE9E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BB3D875E1F5D974A0010FFD7;
+					};
+					BB3D877D1F5D974A0010FFD7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B3ZKJZUE9E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BB3D875E1F5D974A0010FFD7;
+					};
+				};
+			};
+			buildConfigurationList = BB3D875A1F5D974A0010FFD7 /* Build configuration list for PBXProject "MetalBasicTessellation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB3D87561F5D974A0010FFD7;
+			productRefGroup = BB3D87601F5D974A0010FFD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB3D875E1F5D974A0010FFD7 /* MetalBasicTessellation */,
+				BB3D87721F5D974A0010FFD7 /* MetalBasicTessellationTests */,
+				BB3D877D1F5D974A0010FFD7 /* MetalBasicTessellationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB3D875D1F5D974A0010FFD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3D876D1F5D974A0010FFD7 /* LaunchScreen.storyboard in Resources */,
+				BB3D876A1F5D974A0010FFD7 /* Assets.xcassets in Resources */,
+				BB3D87681F5D974A0010FFD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D87711F5D974A0010FFD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D877C1F5D974A0010FFD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB3D875B1F5D974A0010FFD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3D87651F5D974A0010FFD7 /* ViewController.swift in Sources */,
+				BB3D87631F5D974A0010FFD7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D876F1F5D974A0010FFD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3D87781F5D974A0010FFD7 /* MetalBasicTessellationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB3D877A1F5D974A0010FFD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3D87831F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB3D87751F5D974A0010FFD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB3D875E1F5D974A0010FFD7 /* MetalBasicTessellation */;
+			targetProxy = BB3D87741F5D974A0010FFD7 /* PBXContainerItemProxy */;
+		};
+		BB3D87801F5D974A0010FFD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB3D875E1F5D974A0010FFD7 /* MetalBasicTessellation */;
+			targetProxy = BB3D877F1F5D974A0010FFD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB3D87661F5D974A0010FFD7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB3D87671F5D974A0010FFD7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB3D876C1F5D974A0010FFD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB3D87851F5D974A0010FFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB3D87861F5D974A0010FFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB3D87881F5D974A0010FFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BB3D87891F5D974A0010FFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BB3D878B1F5D974A0010FFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalBasicTessellation.app/MetalBasicTessellation";
+			};
+			name = Debug;
+		};
+		BB3D878C1F5D974A0010FFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalBasicTessellation.app/MetalBasicTessellation";
+			};
+			name = Release;
+		};
+		BB3D878E1F5D974A0010FFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetalBasicTessellation;
+			};
+			name = Debug;
+		};
+		BB3D878F1F5D974A0010FFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalBasicTessellationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetalBasicTessellation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB3D875A1F5D974A0010FFD7 /* Build configuration list for PBXProject "MetalBasicTessellation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB3D87851F5D974A0010FFD7 /* Debug */,
+				BB3D87861F5D974A0010FFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB3D87871F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB3D87881F5D974A0010FFD7 /* Debug */,
+				BB3D87891F5D974A0010FFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB3D878A1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB3D878B1F5D974A0010FFD7 /* Debug */,
+				BB3D878C1F5D974A0010FFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB3D878D1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB3D878E1F5D974A0010FFD7 /* Debug */,
+				BB3D878F1F5D974A0010FFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB3D87571F5D974A0010FFD7 /* Project object */;
+}
