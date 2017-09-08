@@ -50,11 +50,13 @@ class ViewController: UIViewController {
     
     @IBAction func segument(_ sender: UISwitch)
     {
+        
         self.tessellationPipeline.wireframe = sender.isOn
         self.mtkView.draw()
 
     }
-    @IBAction func insideHorizon(_ sender: UISlider)
+
+    @IBAction func sliderHorizon(_ sender: UISlider)
     {
         
         self.edge.text = sender.value.description
@@ -62,14 +64,16 @@ class ViewController: UIViewController {
         self.mtkView.draw()
 
     }
-   
-    @IBAction func sliderHorizon(_ sender: UISlider)
+    
+    @IBAction func insideHorizon(_ sender: UISlider)
     {
+        
         self.inside.text = sender.value.description
         self.tessellationPipeline.insideFactor = sender.value
         self.mtkView.draw()
-
+        
     }
+
     
 }
 
