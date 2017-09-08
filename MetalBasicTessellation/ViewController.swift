@@ -65,7 +65,8 @@ class ViewController: UIViewController {
    
     @IBAction func sliderHorizon(_ sender: UISlider)
     {
-        self.inside.text = sender.description
+        self.inside.text = sender.value.description
+        self.tessellationPipeline.insideFactor = sender.value
         self.mtkView.draw()
 
     }
