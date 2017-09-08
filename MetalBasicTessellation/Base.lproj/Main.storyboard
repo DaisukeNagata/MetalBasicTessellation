@@ -128,8 +128,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="edge" destination="eT5-SO-Wpv" id="lHS-gv-9wg"/>
-                        <outlet property="inside" destination="Pvc-BA-5ON" id="xda-10-VyH"/>
+                        <outlet property="edge" destination="Pvc-BA-5ON" id="x1D-da-UPI"/>
+                        <outlet property="inside" destination="ftL-mr-Vr3" id="vWf-uT-0ff"/>
                         <outlet property="mtkView" destination="4e5-qY-lMb" id="phc-2I-lJY"/>
                     </connections>
                 </viewController>
