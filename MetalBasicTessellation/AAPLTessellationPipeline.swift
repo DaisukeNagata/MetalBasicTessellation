@@ -21,12 +21,13 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     var tessellationFactorsBuffer:MTLBuffer!
     var controlPointsBufferTriangle:MTLBuffer!
     var controlPointsBufferQuad:MTLBuffer!
-    var  wireframe = false
+    var wireframe = false
     var patchType : MTLPatchType!
     var edgeFactor:Float!
     var insideFactor:Float!
     
-    func initWithMTKView(mtkView: MTKView )->Self{
+    func initWithMTKView(mtkView: MTKView )->Self
+    {
         
         wireframe = true
         patchType = MTLPatchType.triangle
@@ -62,18 +63,19 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     func didSetupComputePipelines()->Bool
     {
         let kernelFunctionTriangle = library.makeFunction(name: "tessellation_kernel_triangle")
+        
         do{
-            computePipelineTriangle = try device.makeComputePipelineState(function: kernelFunctionTriangle!)
-        }catch{
             
-        }
+            computePipelineTriangle = try device.makeComputePipelineState(function: kernelFunctionTriangle!)
+            
+        }catch{}
         
         let kernelFunctionQuad = library.makeFunction(name: "tessellation_kernel_quad")
+        
         do{
             computePipelineQuad = try device.makeComputePipelineState(function: kernelFunctionQuad!)
-        }catch{
             
-        }
+        }catch{}
         
         return true
     }
@@ -92,9 +94,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     
     func didSetupRenderPipelinesWithMTKView(view:MTKView)->Bool
     {
-        
-        
-        //let AAPLTessellationPipeline : NSError!
+
         let vertexDescriptor = MTLVertexDescriptor()
         vertexDescriptor.attributes[0].format = MTLVertexFormat.float4
         vertexDescriptor.attributes[0].offset = 0
@@ -143,10 +143,10 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     {
         tessellationFactorsBuffer = device.makeBuffer(length: 256,
                                                       options: MTLResourceOptions.storageModePrivate)
+        
         tessellationFactorsBuffer.label = "Tessellation Factors"
         var controlPointsBufferOptions = MTLResourceOptions()
         controlPointsBufferOptions = .storageModeShared
-        
         
         let controlPointPositionsTriangle : Array<Float> =  {
             
@@ -157,8 +157,6 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             
         }()
         
-        
-        //TODO controlPointPositionsTriangle unsafePoiter
         controlPointsBufferTriangle = device.makeBuffer(bytes:controlPointPositionsTriangle,
                                                         length: 100,
                                                         options: controlPointsBufferOptions)
@@ -182,8 +180,6 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         controlPointsBufferQuad.label = "Control Points Quad"
         
-        // More sophisticated tessellation passes might have additional buffers for per-patch user data
-        
     }
     
     func computeTessellationFactorsWithCommandBuffer(commandBuffer:MTLCommandBuffer)
@@ -202,9 +198,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             computeCommandEncoder.setComputePipelineState(computePipelineQuad)
             
         }
+        
         computeCommandEncoder.setBytes(&edgeFactor, length: MemoryLayout.size(ofValue:1), at: 0)
         computeCommandEncoder.setBytes(&insideFactor, length: MemoryLayout.size(ofValue:1), at: 1)
-        
         computeCommandEncoder.setBuffer(tessellationFactorsBuffer, offset: 0, at: 2)
         
         // Bind the user-selected edge and inside factor values to the compute kernel
@@ -230,15 +226,18 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             // Begin encoding render commands, including commands for the tessellator
             renderCommandEncoder.pushDebugGroup("Tessellate and Render")
         }
+        
         // Set the correct render pipeline and bind the correct control points buffer
         if(self.patchType == MTLPatchType.triangle) {
-            renderCommandEncoder.setRenderPipelineState(renderPipelineTriangle)
             
+            renderCommandEncoder.setRenderPipelineState(renderPipelineTriangle)
             renderCommandEncoder.setVertexBuffer(controlPointsBufferTriangle, offset: 0, at: 0)
             
         }else if self.patchType == MTLPatchType.quad {
+            
             renderCommandEncoder.setRenderPipelineState(renderPipelineQuad)
             renderCommandEncoder.setVertexBuffer(controlPointsBufferQuad, offset: 0, at: 0)
+            
         }
         
         // Enable/Disable wireframe mode
@@ -260,14 +259,13 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         withCommandBuffer.present(view.currentDrawable!)
         
     }
-    //#pragma mark Compute/Render methods
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        
-    }
+    //#pragma mark Compute/Render methods
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
     
     func draw(in view: MTKView) {
         autoreleasepool{
+            
             let commandBuffer = commandQueue.makeCommandBuffer()
             self.computeTessellationFactorsWithCommandBuffer(commandBuffer: commandBuffer)
             self.tessellateAndRenderInMTKView(view: view, withCommandBuffer: commandBuffer)
@@ -276,6 +274,4 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             commandBuffer.commit()
         }
     }
-    
 }
-
