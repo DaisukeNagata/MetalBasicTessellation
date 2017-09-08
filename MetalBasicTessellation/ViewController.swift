@@ -58,8 +58,7 @@ class ViewController: UIViewController {
 
     @IBAction func sliderHorizon(_ sender: UISlider)
     {
-        
-        self.edge.text = (Double(sender.value)).description
+        self.edge.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.edgeFactor = sender.value
         self.mtkView.draw()
 
@@ -67,8 +66,8 @@ class ViewController: UIViewController {
     
     @IBAction func insideHorizon(_ sender: UISlider)
     {
-        
-        self.inside.text = (Double(sender.value)).description
+
+        self.inside.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.insideFactor = sender.value
         self.mtkView.draw()
         
