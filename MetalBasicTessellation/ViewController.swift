@@ -7,19 +7,68 @@
 //
 
 import UIKit
+import MetalKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var mtkView: MTKView!
+    @IBOutlet weak var edge: UILabel!
+    @IBOutlet weak var inside: UILabel!
+    var tessellationPipeline =  AAPLTessellationPipeline()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.mtkView.isPaused = true
+        self.mtkView.enableSetNeedsDisplay = true
+        self.mtkView.sampleCount = 4
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        self.tessellationPipeline = tessellationPipeline.initWithMTKView(mtkView:  self.mtkView )
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.mtkView.draw()
+
     }
+ 
+    @IBAction func triagleQuad(_ sender: UISegmentedControl)
+    {
+ 
+        if self.tessellationPipeline.patchType == MTLPatchType.triangle {
+            
+            self.tessellationPipeline.patchType = MTLPatchType.quad
+        }else{
+            self.tessellationPipeline.patchType = MTLPatchType.triangle
+        }
+        
+        self.mtkView.draw()
 
+    }
+    
+    @IBAction func segument(_ sender: UISwitch)
+    {
+        self.tessellationPipeline.wireframe = sender.isOn
+        self.mtkView.draw()
 
+    }
+    @IBAction func insideHorizon(_ sender: UISlider)
+    {
+        
+        self.edge.text = sender.value.description
+        self.tessellationPipeline.edgeFactor = sender.value
+        self.mtkView.draw()
+
+    }
+   
+    @IBAction func sliderHorizon(_ sender: UISlider)
+    {
+        self.inside.text = sender.description
+        self.mtkView.draw()
+
+    }
+    
 }
 

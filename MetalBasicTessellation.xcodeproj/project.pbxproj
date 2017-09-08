@@ -14,6 +14,8 @@
 		BB3D876D1F5D974A0010FFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */; };
 		BB3D87781F5D974A0010FFD7 /* MetalBasicTessellationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87771F5D974A0010FFD7 /* MetalBasicTessellationTests.swift */; };
 		BB3D87831F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */; };
+		BB3D87911F5D976C0010FFD7 /* AAPLTessellationPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */; };
+		BB712AD91F62B5C2002D6D11 /* TessellationFunctions.metal in Sources */ = {isa = PBXBuildFile; fileRef = BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BB3D877E1F5D974A0010FFD7 /* MetalBasicTessellationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBasicTessellationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBasicTessellationUITests.swift; sourceTree = "<group>"; };
 		BB3D87841F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLTessellationPipeline.swift; sourceTree = "<group>"; };
+		BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TessellationFunctions.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */,
 				BB3D87641F5D974A0010FFD7 /* ViewController.swift */,
+				BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */,
+				BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */,
 				BB3D87661F5D974A0010FFD7 /* Main.storyboard */,
 				BB3D87691F5D974A0010FFD7 /* Assets.xcassets */,
 				BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB712AD91F62B5C2002D6D11 /* TessellationFunctions.metal in Sources */,
 				BB3D87651F5D974A0010FFD7 /* ViewController.swift in Sources */,
 				BB3D87631F5D974A0010FFD7 /* AppDelegate.swift in Sources */,
+				BB3D87911F5D976C0010FFD7 /* AAPLTessellationPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +524,7 @@
 				BB3D87891F5D974A0010FFD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB3D878A1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +533,7 @@
 				BB3D878C1F5D974A0010FFD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB3D878D1F5D974A0010FFD7 /* Build configuration list for PBXNativeTarget "MetalBasicTessellationUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +542,7 @@
 				BB3D878F1F5D974A0010FFD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
