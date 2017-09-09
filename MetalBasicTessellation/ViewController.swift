@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         super.viewDidAppear(true)
         
         self.tessellationPipeline = tessellationPipeline.initWithMTKView(mtkView:  self.mtkView )
-
         self.mtkView.draw()
 
     }
@@ -42,8 +41,11 @@ class ViewController: UIViewController {
         if self.tessellationPipeline.patchType == MTLPatchType.triangle {
             
             self.tessellationPipeline.patchType = MTLPatchType.quad
+            
         }else{
+            
             self.tessellationPipeline.patchType = MTLPatchType.triangle
+            
         }
         
         self.mtkView.draw()
@@ -60,6 +62,7 @@ class ViewController: UIViewController {
 
     @IBAction func sliderHorizon(_ sender: UISlider)
     {
+        
         self.edge.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.edgeFactor = sender.value
         self.mtkView.draw()
