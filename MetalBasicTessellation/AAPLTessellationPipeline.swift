@@ -60,6 +60,18 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
     }
     
+    func didSetupMetal()->Bool
+    {
+        
+        device = MTLCreateSystemDefaultDevice()
+        
+        commandQueue = device.makeCommandQueue()
+        library = device.newDefaultLibrary()
+        
+        
+        return true
+    }
+
     func didSetupComputePipelines()->Bool
     {
         let kernelFunctionTriangle = library.makeFunction(name: "tessellation_kernel_triangle")
@@ -76,18 +88,6 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             computePipelineQuad = try device.makeComputePipelineState(function: kernelFunctionQuad!)
             
         }catch{}
-        
-        return true
-    }
-    
-    func didSetupMetal()->Bool
-    {
-        
-        device = MTLCreateSystemDefaultDevice()
-        
-        commandQueue = device.makeCommandQueue()
-        library = device.newDefaultLibrary()
-        
         
         return true
     }
