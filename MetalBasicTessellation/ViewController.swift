@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var inside: UILabel!
     var tessellationPipeline =  AAPLTessellationPipeline()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         self.mtkView.isPaused = true
@@ -25,7 +26,8 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool)
+    {
         super.viewDidAppear(true)
         
         self.tessellationPipeline = tessellationPipeline.initWithMTKView(mtkView:  self.mtkView )
@@ -72,7 +74,5 @@ class ViewController: UIViewController {
         self.mtkView.draw()
         
     }
-
     
 }
-

@@ -35,7 +35,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         insideFactor = 2.0
         
         if(!self.didSetupMetal()){
+            
             return self
+            
         }
         
         // Assign device and delegate to MTKView
@@ -55,7 +57,6 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         // Setup Buffers
         setUpBuffers()
         
-        
         return self
         
     }
@@ -64,10 +65,8 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     {
         
         device = MTLCreateSystemDefaultDevice()
-        
         commandQueue = device.makeCommandQueue()
         library = device.newDefaultLibrary()
-        
         
         return true
     }
@@ -123,18 +122,21 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         // Create render pipeline for triangle-based tessellation
         renderPipelineDescriptor.vertexFunction = library.makeFunction(name: "tessellation_vertex_triangle")
+        
         do{
-            renderPipelineTriangle = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
-        }catch{
             
-        }
+            renderPipelineTriangle = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+            
+        }catch{}
+        
         // Create render pipeline for quad-based tessellation
         renderPipelineDescriptor.vertexFunction =  library.makeFunction(name: "tessellation_vertex_quad")
+        
         do{
-            renderPipelineQuad = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
-        }catch{
             
-        }
+            renderPipelineQuad = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+            
+        }catch{}
         
         return true
     }
@@ -244,7 +246,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         // Enable/Disable wireframe mode
         if wireframe == true{
+            
             renderCommandEncoder.setTriangleFillMode(MTLTriangleFillMode.lines)
+            
         }
         
         // Encode tessellation-specific commands
@@ -265,7 +269,8 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     //#pragma mark Compute/Render methods
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
     
-    func draw(in view: MTKView) {
+    func draw(in view: MTKView)
+    {
         autoreleasepool{
             
             let commandBuffer = commandQueue.makeCommandBuffer()
