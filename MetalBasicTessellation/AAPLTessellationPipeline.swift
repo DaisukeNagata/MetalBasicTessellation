@@ -46,12 +46,16 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         // Setup render pipelines
         if(!self.didSetupComputePipelines()){
-            return self;
+            
+            return self
+            
         }
         
         // Setup render pipelines
         if(!self.didSetupRenderPipelinesWithMTKView(view:mtkView)) {
-            return self;
+            
+            return self
+            
         }
         
         // Setup Buffers
@@ -69,6 +73,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         library = device.newDefaultLibrary()
         
         return true
+        
     }
 
     func didSetupComputePipelines()->Bool
@@ -90,6 +95,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         }catch{}
         
         return true
+        
     }
     
     func didSetupRenderPipelinesWithMTKView(view:MTKView)->Bool
@@ -140,6 +146,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         }catch{}
         
         return true
+        
     }
     
     func setUpBuffers()
