@@ -84,6 +84,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         let kernelFunctionQuad = library.makeFunction(name: "tessellation_kernel_quad")
         
         do{
+            
             computePipelineQuad = try device.makeComputePipelineState(function: kernelFunctionQuad!)
             
         }catch{}
@@ -222,13 +223,13 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         let renderPassDescriptor = view.currentRenderPassDescriptor
         let renderCommandEncoder = withCommandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor!)
         
-        
         if renderPassDescriptor != nil {
             
             renderCommandEncoder.label = "Render Command Encoder"
             
             // Begin encoding render commands, including commands for the tessellator
             renderCommandEncoder.pushDebugGroup("Tessellate and Render")
+            
         }
         
         // Set the correct render pipeline and bind the correct control points buffer
@@ -279,6 +280,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             
             // Finalize tessellation pass and commit the command buffer to the GPU
             commandBuffer.commit()
+            
         }
     }
 }
