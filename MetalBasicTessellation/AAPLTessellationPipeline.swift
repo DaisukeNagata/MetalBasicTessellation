@@ -43,7 +43,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         mtkView.delegate = self
         
         // Setup render pipelines
-        if(!didSetupComputePipelines()){
+        if(!self.didSetupComputePipelines()){
             return self;
         }
         
