@@ -150,10 +150,12 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         let controlPointPositionsTriangle : Array<Float> =  {
             
-            [ -0.8, -0.8, 0.0, 1.0,
-              0.0,  0.8, 0.0, 1.0,
-              0.8, -0.8, 0.0, 1.0,
-              ]
+            [
+                -0.8, -0.8, 0.0, 1.0,
+                0.0,  0.8, 0.0, 1.0,
+                0.8, -0.8, 0.0, 1.0,
+                
+                ]
             
         }()
         
@@ -166,10 +168,10 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         let controlPointPositionsQuad  : Array<Float>  =  {
             
             [
-                -0.8,  0.8, 0.0, 1.0,   // upper-left
+                -0.8,  0.8, 0.0, 1.0,  // upper-left
                 0.8,  0.8, 0.0, 1.0,   // upper-right
                 0.8, -0.8, 0.0, 1.0,   // lower-right
-                -0.8, -0.8, 0.0, 1.0,   // lower-left
+                -0.8, -0.8, 0.0, 1.0,  // lower-left
             ]
             
         }()
