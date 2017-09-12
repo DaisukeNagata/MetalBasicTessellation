@@ -105,6 +105,25 @@ vertex FunctionOutIn tessellation_vertex_quad(PatchIn patchIn [[stage_in]],
     return vertexOut;
 }
 
+// Quad post-tessellation vertex function
+[[patch(quad, 4)]]
+vertex FunctionOutIn tessellation_vertex_quadSecound(PatchIn patchIn [[stage_in]],
+                                              float2 patch_coord [[ position_in_patch ]])
+{
+    // Parameter coordinates
+    float u = patch_coord.x;
+    float v = patch_coord.y;
+    // Linear interpolation
+    float2 upper_middle = mix(patchIn.control_points[0].position.xy, patchIn.control_points[1].position.xy, u);
+    float2 lower_middle = mix(patchIn.control_points[2].position.xy, patchIn.control_points[3].position.xy, u);
+    
+    // Output
+    FunctionOutIn vertexOut;
+    vertexOut.position = float4(mix(upper_middle, lower_middle, v), 0.0, 1.0);
+    vertexOut.color = half4(patch_coord.x,patch_coord.y, lower_middle.x, 1.0);
+    return vertexOut;
+}
+
 #pragma mark Fragment Function
 
 // Common fragment function

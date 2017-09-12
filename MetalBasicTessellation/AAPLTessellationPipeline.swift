@@ -16,11 +16,14 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     var library : MTLLibrary!
     var computePipelineTriangle: MTLComputePipelineState!
     var computePipelineQuad : MTLComputePipelineState!
+    var computePipelineQuadSecound : MTLComputePipelineState!
     var renderPipelineTriangle:MTLRenderPipelineState!
     var renderPipelineQuad: MTLRenderPipelineState!
+    var renderPipelineQuadSecound: MTLRenderPipelineState!
     var tessellationFactorsBuffer:MTLBuffer!
     var controlPointsBufferTriangle:MTLBuffer!
     var controlPointsBufferQuad:MTLBuffer!
+    var controlPointsBufferQuadSecound:MTLBuffer!
     var wireframe = false
     var patchType : MTLPatchType!
     var edgeFactor:Float!
@@ -70,7 +73,7 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         device = MTLCreateSystemDefaultDevice()
         commandQueue = device.makeCommandQueue()
-        library = device.newDefaultLibrary()
+        library = device.makeDefaultLibrary()
         
         return true
         
@@ -91,6 +94,14 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         do{
             
             computePipelineQuad = try device.makeComputePipelineState(function: kernelFunctionQuad!)
+            
+        }catch{}
+        
+        let kernelFunctionQuadSwcound = library.makeFunction(name: "tessellation_kernel_quad")
+        
+        do{
+            
+            computePipelineQuadSecound = try device.makeComputePipelineState(function: kernelFunctionQuadSwcound!)
             
         }catch{}
         
@@ -144,9 +155,18 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             renderPipelineQuad = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
             
         }catch{}
+
+        
+        // Create render pipeline for quad-based tessellation
+        renderPipelineDescriptor.vertexFunction =  library.makeFunction(name: "tessellation_vertex_quadSecound")
+        
+        do{
+            
+            renderPipelineQuadSecound = try device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+            
+        }catch{}
         
         return true
-        
     }
     
     func setUpBuffers()
@@ -192,35 +212,56 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         controlPointsBufferQuad.label = "Control Points Quad"
         
+        let controlPointPositionsQuadSecound  : Array<Float>  =  {
+            
+            [
+                -0.8,  0.8, 0.0, 1.0,  // upper-left
+                0.8,  0.8, 0.0, 1.0,   // upper-right
+                0.8, -0.8, 0.0, 1.0,   // lower-right
+                -0.8, -0.8, 0.0, 1.0,  // lower-left
+            ]
+            
+        }()
+        
+        controlPointsBufferQuadSecound = device.makeBuffer(bytes:controlPointPositionsQuadSecound,
+                                                    length: 100,
+                                                    options: controlPointsBufferOptions)
+        
+        controlPointsBufferQuadSecound.label = "Control Points Quad"
+        
     }
     
     func computeTessellationFactorsWithCommandBuffer(commandBuffer:MTLCommandBuffer)
     {
         // Create a compute command encoder
         let computeCommandEncoder = commandBuffer.makeComputeCommandEncoder()
-        computeCommandEncoder.label = "Compute Command Encoder"
-        computeCommandEncoder.pushDebugGroup("Compute Tessellation Factors")
+        computeCommandEncoder?.label = "Compute Command Encoder"
+        computeCommandEncoder?.pushDebugGroup("Compute Tessellation Factors")
         
         if self.patchType == MTLPatchType.triangle {
             
-            computeCommandEncoder.setComputePipelineState(computePipelineTriangle)
+            computeCommandEncoder?.setComputePipelineState(computePipelineTriangle)
             
         } else if self.patchType == MTLPatchType.quad{
             
-            computeCommandEncoder.setComputePipelineState(computePipelineQuad)
+            computeCommandEncoder?.setComputePipelineState(computePipelineQuad)
+            
+        }else if self.patchType == MTLPatchType.none{
+            
+            computeCommandEncoder?.setComputePipelineState(computePipelineQuadSecound)
             
         }
         
-        computeCommandEncoder.setBytes(&edgeFactor, length: MemoryLayout.size(ofValue:1), at: 0)
-        computeCommandEncoder.setBytes(&insideFactor, length: MemoryLayout.size(ofValue:1), at: 1)
-        computeCommandEncoder.setBuffer(tessellationFactorsBuffer, offset: 0, at: 2)
+        computeCommandEncoder?.setBytes(&edgeFactor, length: MemoryLayout.size(ofValue:1), index: 0)
+        computeCommandEncoder?.setBytes(&insideFactor, length: MemoryLayout.size(ofValue:1), index: 1)
+        computeCommandEncoder?.setBuffer(tessellationFactorsBuffer, offset: 0, index: 2)
         
         // Bind the user-selected edge and inside factor values to the compute kernel
-        computeCommandEncoder.dispatchThreadgroups(MTLSizeMake(1, 1, 1), threadsPerThreadgroup: MTLSizeMake(1, 1, 1))
+        computeCommandEncoder?.dispatchThreadgroups(MTLSizeMake(1, 1, 1), threadsPerThreadgroup: MTLSizeMake(1, 1, 1))
         
         // All compute commands have been encoded
-        computeCommandEncoder.popDebugGroup()
-        computeCommandEncoder.endEncoding()
+        computeCommandEncoder?.popDebugGroup()
+        computeCommandEncoder?.endEncoding()
     }
     
     func tessellateAndRenderInMTKView(view:MTKView,withCommandBuffer:MTLCommandBuffer)
@@ -232,42 +273,47 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         
         if renderPassDescriptor != nil {
             
-            renderCommandEncoder.label = "Render Command Encoder"
+            renderCommandEncoder?.label = "Render Command Encoder"
             
             // Begin encoding render commands, including commands for the tessellator
-            renderCommandEncoder.pushDebugGroup("Tessellate and Render")
+            renderCommandEncoder?.pushDebugGroup("Tessellate and Render")
             
         }
         
         // Set the correct render pipeline and bind the correct control points buffer
         if(self.patchType == MTLPatchType.triangle) {
             
-            renderCommandEncoder.setRenderPipelineState(renderPipelineTriangle)
-            renderCommandEncoder.setVertexBuffer(controlPointsBufferTriangle, offset: 0, at: 0)
+            renderCommandEncoder?.setRenderPipelineState(renderPipelineTriangle)
+            renderCommandEncoder?.setVertexBuffer(controlPointsBufferTriangle, offset: 0, index: 0)
             
         }else if self.patchType == MTLPatchType.quad {
             
-            renderCommandEncoder.setRenderPipelineState(renderPipelineQuad)
-            renderCommandEncoder.setVertexBuffer(controlPointsBufferQuad, offset: 0, at: 0)
+            renderCommandEncoder?.setRenderPipelineState(renderPipelineQuad)
+            renderCommandEncoder?.setVertexBuffer(controlPointsBufferQuad, offset: 0, index: 0)
+            
+        }else if self.patchType == MTLPatchType.none {
+            
+            renderCommandEncoder?.setRenderPipelineState(renderPipelineQuadSecound)
+            renderCommandEncoder?.setVertexBuffer(controlPointsBufferQuadSecound, offset: 0, index: 0)
             
         }
         
         // Enable/Disable wireframe mode
         if wireframe == true{
             
-            renderCommandEncoder.setTriangleFillMode(MTLTriangleFillMode.lines)
+            renderCommandEncoder?.setTriangleFillMode(MTLTriangleFillMode.lines)
             
         }
         
         // Encode tessellation-specific commands
-        renderCommandEncoder.setTessellationFactorBuffer(tessellationFactorsBuffer, offset: 0, instanceStride: 0)
+        renderCommandEncoder?.setTessellationFactorBuffer(tessellationFactorsBuffer, offset: 0, instanceStride: 0)
         let patchControlPoints = self.patchType == MTLPatchType.triangle ? 3: 4
         
-        renderCommandEncoder.drawPatches(numberOfPatchControlPoints: patchControlPoints, patchStart: 0, patchCount: 1, patchIndexBuffer: nil, patchIndexBufferOffset: 0, instanceCount: 1, baseInstance: 0)
+        renderCommandEncoder?.drawPatches(numberOfPatchControlPoints: patchControlPoints, patchStart: 0, patchCount: 1, patchIndexBuffer: nil, patchIndexBufferOffset: 0, instanceCount: 1, baseInstance: 0)
         
         // All render commands have been encoded
-        renderCommandEncoder.popDebugGroup()
-        renderCommandEncoder.endEncoding()
+        renderCommandEncoder?.popDebugGroup()
+        renderCommandEncoder?.endEncoding()
         
         // Schedule a present once the drawable has been completely rendered to
         withCommandBuffer.present(view.currentDrawable!)
@@ -282,11 +328,11 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         autoreleasepool{
             
             let commandBuffer = commandQueue.makeCommandBuffer()
-            self.computeTessellationFactorsWithCommandBuffer(commandBuffer: commandBuffer)
-            self.tessellateAndRenderInMTKView(view: view, withCommandBuffer: commandBuffer)
+            self.computeTessellationFactorsWithCommandBuffer(commandBuffer: commandBuffer!)
+            self.tessellateAndRenderInMTKView(view: view, withCommandBuffer: commandBuffer!)
             
             // Finalize tessellation pass and commit the command buffer to the GPU
-            commandBuffer.commit()
+            commandBuffer?.commit()
             
         }
     }
