@@ -8,4 +8,6 @@ http://dbank0208.com/Metal19.html
 
 http://dbank0208.com/Metal20.html
 
+<img src="https://github.com/daisukenagata/MetalBasicTessellation/blob/master/Quad2.png?raw=true">
+
 ![](https://github.com/daisukenagata/MetalBasicTessellation/blob/master/MovieMetal.gif?raw=true)
