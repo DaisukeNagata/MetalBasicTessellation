@@ -120,7 +120,7 @@ vertex FunctionOutIn tessellation_vertex_quadSecound(PatchIn patchIn [[stage_in]
     // Output
     FunctionOutIn vertexOut;
     vertexOut.position = float4(mix(upper_middle, lower_middle, v), 0.0, 1.0);
-    vertexOut.color = half4(patch_coord.x,patch_coord.y, lower_middle.x, 1.0);
+    vertexOut.color = half4(u,v, lower_middle.x, 1.0);
     return vertexOut;
 }
 
