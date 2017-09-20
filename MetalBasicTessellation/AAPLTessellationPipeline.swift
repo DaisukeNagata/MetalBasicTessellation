@@ -188,9 +188,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
                 ]
             
         }()
-        
+        //Animation is set from 88.
         controlPointsBufferTriangle = device.makeBuffer(bytes:controlPointPositionsTriangle,
-                                                        length: 100,
+                                                        length:  MemoryLayout.size(ofValue: controlPointPositionsTriangle)*11,
                                                         options: controlPointsBufferOptions)
         
         controlPointsBufferTriangle.label = "Control Points Triangle"
@@ -205,9 +205,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
             ]
             
         }()
-        
+        //Animation is set from 88.
         controlPointsBufferQuad = device.makeBuffer(bytes:controlPointPositionsQuad,
-                                                    length: 100,
+                                                    length: MemoryLayout.size(ofValue: controlPointPositionsQuad)*11,
                                                     options: controlPointsBufferOptions)
         
         controlPointsBufferQuad.label = "Control Points Quad"
