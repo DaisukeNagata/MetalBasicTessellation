@@ -74,7 +74,6 @@ class ViewController: UIViewController {
     
     @IBAction func insideHorizon(_ sender: UISlider)
     {
-        
         self.inside.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.insideFactor = sender.value
         self.mtkView.draw()
