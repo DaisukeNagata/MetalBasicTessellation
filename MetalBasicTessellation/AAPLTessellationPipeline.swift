@@ -215,16 +215,16 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         let controlPointPositionsQuadSecound  : Array<Float>  =  {
             
             [
-                -0.8,  0.8, 0.0, 1.0,  // upper-left
+               -0.8,  0.8, 0.0, 1.0,   // upper-left
                 0.8,  0.8, 0.0, 1.0,   // upper-right
                 0.8, -0.8, 0.0, 1.0,   // lower-right
-                -0.8, -0.8, 0.0, 1.0,  // lower-left
+               -0.8, -0.8, 0.0, 1.0,   // lower-left
             ]
             
         }()
         
         controlPointsBufferQuadSecound = device.makeBuffer(bytes:controlPointPositionsQuadSecound,
-                                                    length: 100,
+                                                    length: MemoryLayout.size(ofValue: controlPointPositionsQuad)*11,
                                                     options: controlPointsBufferOptions)
         
         controlPointsBufferQuadSecound.label = "Control Points Quad"
