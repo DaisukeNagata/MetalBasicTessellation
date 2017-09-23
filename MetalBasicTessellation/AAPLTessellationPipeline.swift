@@ -171,7 +171,8 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     
     func setUpBuffers()
     {
-        tessellationFactorsBuffer = device.makeBuffer(length: 256,
+        //validateComputeFunctionArguments length - offset must be >= 12
+        tessellationFactorsBuffer = device.makeBuffer(length: 12,
                                                       options: MTLResourceOptions.storageModePrivate)
         
         tessellationFactorsBuffer.label = "Tessellation Factors"
