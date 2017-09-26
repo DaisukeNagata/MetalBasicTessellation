@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         self.mtkView.enableSetNeedsDisplay = true
         self.mtkView.sampleCount = 4
         
+        self.swipeMethod()
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -66,6 +67,8 @@ class ViewController: UIViewController {
     @IBAction func sliderHorizon(_ sender: UISlider)
     {
         
+
+        self.mtkView.clearColor =  MTLClearColorMake(Double(CGFloat(sender.value))/11, Double(CGFloat(sender.value))/22, Double(CGFloat(sender.value))/33, 1)
         self.edge.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.edgeFactor = sender.value
         self.mtkView.draw()
@@ -75,10 +78,31 @@ class ViewController: UIViewController {
     @IBAction func insideHorizon(_ sender: UISlider)
     {
         
+
+        self.mtkView.clearColor =  MTLClearColorMake(Double(CGFloat(sender.value))/33, Double(CGFloat(sender.value))/22, Double(CGFloat(sender.value))/11, 1)
         self.inside.text = String(format: "%.01f", Float(sender.value))
         self.tessellationPipeline.insideFactor = sender.value
         self.mtkView.draw()
         
     }
     
+    private func swipeMethod()
+    {
+        let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
+        for direction in directions {
+            let gesture = UISwipeGestureRecognizer(target: self,
+                                                   action:#selector(handleSwipe(sender:)))
+            
+            gesture.direction = direction
+            self.view.addGestureRecognizer(gesture)
+        }
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer)
+    {
+        
+        self.mtkView.clearColor = MTLClearColorMake(0, 0, 0, 1)
+        self.mtkView.draw()
+        
+    }
 }
