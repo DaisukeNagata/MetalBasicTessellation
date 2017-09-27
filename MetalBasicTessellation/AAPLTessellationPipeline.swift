@@ -24,8 +24,9 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
     var controlPointsBufferTriangle:MTLBuffer!
     var controlPointsBufferQuad:MTLBuffer!
     var controlPointsBufferQuadSecound:MTLBuffer!
-    var wireframe = false
     var patchType : MTLPatchType!
+    
+    var wireframe = false
     var edgeFactor:Float!
     var insideFactor:Float!
     
@@ -310,7 +311,13 @@ class AAPLTessellationPipeline :NSObject,MTKViewDelegate{
         renderCommandEncoder?.setTessellationFactorBuffer(tessellationFactorsBuffer, offset: 0, instanceStride: 0)
         let patchControlPoints = self.patchType == MTLPatchType.triangle ? 3: 4
         
-        renderCommandEncoder?.drawPatches(numberOfPatchControlPoints: patchControlPoints, patchStart: 0, patchCount: 1, patchIndexBuffer: nil, patchIndexBufferOffset: 0, instanceCount: 1, baseInstance: 0)
+        renderCommandEncoder?.drawPatches(numberOfPatchControlPoints: patchControlPoints,
+                                          patchStart: 0,
+                                          patchCount: 1,
+                                          patchIndexBuffer: nil,
+                                          patchIndexBufferOffset: 0,
+                                          instanceCount: 1,
+                                          baseInstance: 0)
         
         // All render commands have been encoded
         renderCommandEncoder?.popDebugGroup()

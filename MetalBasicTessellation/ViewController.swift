@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         default:
             break;
         }
+        
         self.mtkView.draw()
         
     }
