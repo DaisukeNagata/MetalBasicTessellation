@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     
     private func swipeMethod()
     {
-        let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
+        let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left, .up, .down]
         for direction in directions {
             let gesture = UISwipeGestureRecognizer(target: self,
                                                    action:#selector(handleSwipe(sender:)))
