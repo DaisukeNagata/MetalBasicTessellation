@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		BB3D87631F5D974A0010FFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */; };
 		BB3D87651F5D974A0010FFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87641F5D974A0010FFD7 /* ViewController.swift */; };
-		BB3D87681F5D974A0010FFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D87661F5D974A0010FFD7 /* Main.storyboard */; };
 		BB3D876A1F5D974A0010FFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3D87691F5D974A0010FFD7 /* Assets.xcassets */; };
 		BB3D876D1F5D974A0010FFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */; };
 		BB3D87781F5D974A0010FFD7 /* MetalBasicTessellationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87771F5D974A0010FFD7 /* MetalBasicTessellationTests.swift */; };
 		BB3D87831F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */; };
 		BB3D87911F5D976C0010FFD7 /* AAPLTessellationPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */; };
+		BB5C5AA025E1C8DE005BCFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB5C5A9F25E1C8DE005BCFD7 /* Main.storyboard */; };
 		BB712AD91F62B5C2002D6D11 /* TessellationFunctions.metal in Sources */ = {isa = PBXBuildFile; fileRef = BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,6 @@
 		BB3D875F1F5D974A0010FFD7 /* MetalBasicTessellation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBasicTessellation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D87621F5D974A0010FFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3D87641F5D974A0010FFD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BB3D87671F5D974A0010FFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB3D87691F5D974A0010FFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3D876C1F5D974A0010FFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB3D876E1F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		BB3D87821F5D974A0010FFD7 /* MetalBasicTessellationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBasicTessellationUITests.swift; sourceTree = "<group>"; };
 		BB3D87841F5D974A0010FFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLTessellationPipeline.swift; sourceTree = "<group>"; };
+		BB5C5A9F25E1C8DE005BCFD7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TessellationFunctions.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 				BB3D87641F5D974A0010FFD7 /* ViewController.swift */,
 				BB3D87901F5D976C0010FFD7 /* AAPLTessellationPipeline.swift */,
 				BB712AD81F62B5C2002D6D11 /* TessellationFunctions.metal */,
-				BB3D87661F5D974A0010FFD7 /* Main.storyboard */,
+				BB5C5A9F25E1C8DE005BCFD7 /* Main.storyboard */,
 				BB3D87691F5D974A0010FFD7 /* Assets.xcassets */,
 				BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */,
 				BB3D876E1F5D974A0010FFD7 /* Info.plist */,
@@ -194,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = nagatadaisuke;
 				TargetAttributes = {
 					BB3D875E1F5D974A0010FFD7 = {
@@ -246,7 +246,7 @@
 			files = (
 				BB3D876D1F5D974A0010FFD7 /* LaunchScreen.storyboard in Resources */,
 				BB3D876A1F5D974A0010FFD7 /* Assets.xcassets in Resources */,
-				BB3D87681F5D974A0010FFD7 /* Main.storyboard in Resources */,
+				BB5C5AA025E1C8DE005BCFD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +310,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BB3D87661F5D974A0010FFD7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB3D87671F5D974A0010FFD7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BB3D876B1F5D974A0010FFD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -355,6 +347,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -379,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -433,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -448,7 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
 				INFOPLIST_FILE = MetalBasicTessellation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,7 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
 				INFOPLIST_FILE = MetalBasicTessellation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalBasicTessellation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
