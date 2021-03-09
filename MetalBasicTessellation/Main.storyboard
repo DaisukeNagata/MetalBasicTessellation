@@ -65,7 +65,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="pdX-Ja-XHc">
-                                        <rect key="frame" x="157" y="98.5" width="171" height="31"/>
+                                        <rect key="frame" x="157" y="98.5" width="166" height="31"/>
                                         <connections>
                                             <action selector="insideHorizon:" destination="OwP-DK-pG2" eventType="valueChanged" id="i1Y-zy-F3K"/>
                                         </connections>
@@ -100,7 +100,7 @@
                                     <constraint firstItem="jcU-T1-ZkD" firstAttribute="leading" secondItem="AIc-19-mpZ" secondAttribute="leading" constant="101" id="ID6-03-f95"/>
                                     <constraint firstItem="ADn-RF-Jfz" firstAttribute="top" secondItem="AIc-19-mpZ" secondAttribute="topMargin" constant="-8" id="Iiz-uO-tUk"/>
                                     <constraint firstItem="pdX-Ja-XHc" firstAttribute="top" secondItem="sKz-DR-u14" secondAttribute="bottom" constant="-2" id="MfS-Mc-bLF"/>
-                                    <constraint firstItem="VZg-gp-ntn" firstAttribute="leading" secondItem="pdX-Ja-XHc" secondAttribute="trailing" constant="8" id="NxY-AG-n2i"/>
+                                    <constraint firstItem="VZg-gp-ntn" firstAttribute="leading" secondItem="pdX-Ja-XHc" secondAttribute="trailing" constant="13" id="NxY-AG-n2i"/>
                                     <constraint firstItem="uCE-ou-0xh" firstAttribute="leading" secondItem="wc1-Al-617" secondAttribute="trailing" constant="13" id="Och-99-8E2"/>
                                     <constraint firstItem="RyX-Ro-Tss" firstAttribute="baseline" secondItem="nkS-bc-FaA" secondAttribute="baseline" constant="-1" id="Ovx-my-Cub"/>
                                     <constraint firstAttribute="height" constant="130" id="RAO-rr-G7i"/>
